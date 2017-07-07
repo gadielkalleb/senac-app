@@ -34,6 +34,11 @@ function editarRegistro(elemento) {
     document.getElementById("incluirBtn").classList.add("hide");
     document.getElementById("alterarBtn").classList.remove("hide");
     
+    var operacoes = document.getElementsByClassName("operacoes");
+
+    for (var i = 0; i < operacoes.length; i++) {
+        operacoes[i].classList.add("hide");
+    }
 }
 
 
@@ -111,17 +116,22 @@ function alterarRegistro(){
         colunas[2].innerText = aluno.profissao;
 
         limparFormulario();
-        exibirMensagem("Aluno cadastrado com sucesso!")
+        exibirMensagem("Aluno alterado com sucesso!")
 
         document.getElementById("incluirBtn").classList.remove("hide");
         document.getElementById("alterarBtn").classList.add("hide");
-    }else{
-        exibirMensagem("Todos os campos são obrigatorios");
-    }
     
-    
+        var operacoes = document.getElementsByClassName("operacoes");
 
+        for (var i = 0; i < operacoes.length; i++) {
+            operacoes[i].classList.remove("hide");
+        }
+    } else {
+        exibirMensagem("Todos os campos são obrigatórios!");
+    }
 }
+    
+    
 
 //a função criarAluno cria uma variavel aluno para ser populada com os dados 
 

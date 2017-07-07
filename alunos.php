@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <title>Senac App</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Materialize CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-
-</head>
-
-<body>
-
-  <header>
-    <nav class="blue darken-4">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">Senac App</a>
-      </div>
-    </nav>
-  </header>
+<?php
+  $cabecalho_title = "Alunos Senac";
+  include("cabecalho.php");
+?>
 
   <main>
 
-    <section class="container">
-      <div class="card-panel">
+    <section class="container  section">
+      
+      <div class="card-panel blue-grey lighten-5 z-depth-3">
+        <h5 class="center">lista de alunos</h5>
+        <div class="divider"></div>
         <table class="centered highlight">
           <thead>
+            
             <tr>
               <th>Nome</th>
               <th>Idade</th>
@@ -50,8 +34,11 @@
       </div>
     </section>
 
-    <section class="container">
-      <div class="card-panel">
+    <section class="container section">
+     
+      <div class="card-panel blue-grey lighten-5 z-depth-3">
+        <h5 class="center">Cadastro de alunos</h5>
+        <div class="divider"></div>
         <div class="row">
           <form id="formularioAluno" class="col s12">
 
@@ -90,7 +77,16 @@
     </section>
   </main>
 
-  <script src="index.js"></script>
+<?php
+  include("rodape.php");
+?>
+
+  <script src="alunos.js"></script>
+  <script>
+    $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+    })
+  </script>
 </body>
 
 </html>
